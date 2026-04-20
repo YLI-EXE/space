@@ -521,6 +521,14 @@ elements.forEach(el => observer.observe(el));
 	<!-- Script for 4 APRIL settimana santa slider FIN -->	
 	
 <!-- Script for burger MENU MOBILE responsive -->
+<script>
+const dropdown = document.querySelector(".dropdown-toggle");
+const parent = document.querySelector(".cyber");
+
+dropdown.addEventListener("click", () => {
+  parent.classList.toggle("active");
+});
+</script>
 	
 <script>
 const burger = document.querySelector(".burger");
