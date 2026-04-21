@@ -525,23 +525,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.querySelector(".menu-vertical");
   const overlay = document.querySelector(".menu-overlay");
 
-  if (!burger || !menu || !overlay) {
-    console.log("Burger system missing elements");
-    return;
-  }
+  if (!burger || !menu || !overlay) return;
 
   burger.addEventListener("click", () => {
     menu.classList.toggle("active");
     overlay.classList.toggle("active");
-  });
-
-  overlay.addEventListener("click", () => {
-    menu.classList.remove("active");
-    overlay.classList.remove("active");
+    burger.classList.toggle("active"); // 🔥 this triggers rotation
   });
 
 });
 </script>
+ 
 	
 	<!-- Script for burger MENU MOBILE responsive FIN -->
 
