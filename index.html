@@ -15,9 +15,10 @@
 <section class="hero">
   <canvas id="liquid-canvas"></canvas>
 
-  <img src="bannier-presentation-for-my-website-incubator-V2.png"
-       class="hero-img"
-       alt="Intro portfolio">
+ <img src="bannier-presentation-for-my-website-incubator-V2.png"
+     class="hero-img"
+      data-mobile="incubator visuel pour mobile.GIF"
+     alt="Intro portfolio">
 
   <div class="hero-overlay"></div>
 	
@@ -538,7 +539,15 @@ document.addEventListener("DOMContentLoaded", () => {
  
 	
 	<!-- Script for burger MENU MOBILE responsive FIN -->
-
+	
+<!-- Script for burger image intro  MOBILE responsive-->
+<script>
+if (window.innerWidth <= 768) {
+  const hero = document.querySelector(".hero-img");
+  hero.src = hero.getAttribute("data-mobile");
+}
+</script>
+<!-- Script for burger image intro  MOBILE responsive FIN -->
 
 	
 </body>
