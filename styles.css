@@ -689,8 +689,11 @@ div#content div.rightbox{
 /* ===== Y2K BURGER MENU for MOBILE===== */
 
 /* Burger button */
-.burger {
-  display: none;
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
 }
 
 /* Overlay (dark background when menu open) */
@@ -701,7 +704,19 @@ div#content div.rightbox{
 
  /* MOBILE responsive burger uniquement */
 /* ===== MOBILE BURGER ===== */
+
 @media (max-width: 768px) {
+  .burger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3000;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+  }
+
 
   .menu-vertical {
     left: auto;
