@@ -1,68 +1,148 @@
-html, body {
+/* ================= GLOBAL ================= */
+
+html,
+body {
   margin: 0;
   padding: 0;
-  background: black !important; /* force le noir et supprime toute image de styles.css */
+  background: black;
   color: white;
-  font-family: 'Octuple Max', sans-serif;
+
+  height: 100%;
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
 }
 
-header {
-  text-align: center;
-  padding: 40px 0;
-}
+/* ================= SPLIT LAYOUT ================= */
 
-header h1 {
-  font-size: 48px;
-  color: #ff5fa2;
-  margin: 0;
-}
-
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.gallery-item img {
+.split-layout {
+  display: flex;
   width: 100%;
-  height: auto;
+  height: 100vh;
+}
+
+/* ================= LEFT SIDE ================= */
+
+.left-side {
+  width: 50%;
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* hide scrollbar */
+.left-side::-webkit-scrollbar {
+  display: none;
+}
+
+.image-block {
+  margin-bottom: 40px;
+}
+
+.image-block img {
+  width: 100%;
   display: block;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 95, 162, 0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 14px;
 }
 
-.gallery-item img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 95, 162, 0.9);
+/* ================= RIGHT SIDE ================= */
+
+.right-side {
+  width: 50%;
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-left: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
+/* content wrapper */
+.text-sticky {
+  padding: 80px;
+  box-sizing: border-box;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ================= TITLE ================= */
+
+.text-sticky h1 {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 30px 0;
   color: white;
-  background-color: #111;
-}
-@charset "UTF-8";
-/* CSS Document */
-
-/* Images plus grandes (moitié de page) */
-/* Ligne des deux grandes images */
-.full-row {
-  grid-column: 1 / -1; /* prend toute la largeur */
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
-  gap: 20px;
 }
 
-
-/* Décale tout le contenu principal */
-header,
-.gallery-container,
-footer {
-  margin-left: 220px;
+/* force line break */
+.text-sticky h1 span {
+  display: block;
 }
 
+/* ================= TYPOGRAPHY ================= */
+
+.ania-date {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.ania-description {
+  font-size: 20px;
+  max-width: 500px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.text-sticky p {
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 520px;
+  opacity: 0.9;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    overflow: auto;
+    height: auto;
+  }
+
+  .split-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-sticky {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+
+  .text-sticky h1 {
+    font-size: 36px;
+  }
+
+}
