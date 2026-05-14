@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contactez-nous</title>
+
+<!-- Main CSS -->
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<!-- Contact page CSS -->
+<link rel="stylesheet" type="text/css" href="contact.css">
+</head>
+
+<body class="contact-page">
+
+<div class="burger">☰</div>
+	
+<header class="hero-header">
+  <div class="intergalactic-time">
+    <div class="time-label">INTERGALACTIC TIME</div>
+    <div id="clock">00:00:00</div>
+  </div>
+</header>
+
+<!-- Menu -->
+<nav class="menu-vertical">
+  <ul>
+    <li><a href="index.html">news</a></li>
+    <li><a href="news.html">intro</a></li>
+    <li><a href="contacts.html">about</a></li>
+    <li class="dropdown cyber">
+      <div class="dropdown-toggle"><span class="angel-icon">✧</span> work</div>
+      <ul class="submenu">
+        <li><a href="ania.html">Ania</a></li>
+        <li><a href="leo.html">Leonardo</a></li>
+        <li><a href="work/autre.html">AutrePage</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<!-- Marquee -->
+<marquee class="contact-marquee"
+scrollamount="3"
+scrolldelay="5"
+direction="left"
+onmouseover="this.stop()"
+onmouseout="this.start()">
+
+FOR INQUIRIES / COLLABORATIONS / PROJECTS — CONTACT : mock_brule@hotmail.it
+
+</marquee>
+
+<!-- BIO -->
+<section class="bio">
+
+<p>
+Yli is an interdisciplinary artist, former professional ballet and urban dance performer. Born of Moldovan and Italian origins, she spent several years dancing professionally in Italy before moving to Paris to begin a new chapter in her career.
+</p>
+
+<p>
+She first entered the luxury industry, working in communication and client experience for Italian brands such as Armani and Fendi. She then continued her journey across Europe, working in the United Kingdom and Germany with brands including Mulberry and Mytheresa.
+</p>
+
+<p>
+For over ten years, she has been based in Paris, where she has developed her expertise in omnichannel strategy and CRM, bridging creativity and digital systems.
+</p>
+
+<p>
+Alongside her professional practice, Yli explores artistic expression through film, music, editing, and photography, and creates aesthetics and designs to support her friends and those around her. Deeply inspired by visual and sound culture, she transforms what she observes and experiences into visual compositions, using image and sound as her primary languages.
+</p>
+
+<p>
+Her work is driven by a continuous need to create — where art, emotion, and experience constantly intersect.
+</p>
+
+<blockquote>
+“Tanz, Tanz otherwise we are lost”
+</blockquote>
+
+</section>
+
+
+<!-- Additional image -->
+<img src="liz taylor.png" alt="Liz Taylor" class="left-image">
+
+<!-- Navicelle spaziali-->	
+<div class="spaceship s1">
+  <img src="space_ship_-removebg-preview.png" alt="ship">
+</div>
+
+<div class="spaceship s2">
+  <img src="space_ship_-removebg-preview.png" alt="ship">
+</div>
+
+<div class="spaceship s3">
+  <img src="space_ship_-removebg-preview.png" alt="ship">
+</div>
+	
+	
+<!-- Dropdown menu JS -->
+<script>
+document.querySelectorAll(".cyber > .dropdown-toggle").forEach(function(toggle) {
+  toggle.addEventListener("click", function(e) {
+    e.preventDefault();
+    this.parentElement.classList.toggle("active");
+  });
+});
+</script>
+
+<!-- cache hide burger menu sur mobile-->
+<script>
+document.querySelector(".burger").addEventListener("click", function () {
+  document.querySelector(".menu-vertical").classList.toggle("active");
+});
+</script>	
+	
+
+<script>
+function updateClock() {
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, '0');
+  const m = String(now.getMinutes()).padStart(2, '0');
+  const s = String(now.getSeconds()).padStart(2, '0');
+
+  document.getElementById("clock").textContent = `${h}:${m}:${s}`;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>	
+	
+</body>
+</html>

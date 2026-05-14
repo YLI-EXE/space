@@ -1,0 +1,233 @@
+
+/* =========================
+   CONTACT PAGE - FINAL CSS
+   ========================= */
+
+body.contact-page {
+  margin: 0;
+  padding: 0;
+  background-image: url("texas desert 2.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Voile sombre sur le fond */
+body.contact-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+
+/* =========================
+   TEXTES
+   ========================= */
+
+p.slt {
+  color: blue;
+}
+
+p.penelope {
+  color: orangered;
+}
+
+/* =========================
+   IMAGE CV
+   ========================= */
+
+img.curriculum {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+
+/* =========================
+   MARQUEE
+   ========================= */
+
+
+.contact-marquee {
+  max-width: 500px;
+  background: #0b0b0b; /* matte black */
+  color: white;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+
+  padding: 10px;
+  display: block;
+  margin: 70px auto;
+
+  white-space: nowrap;
+}
+
+/* =========================
+   IMAGE ZEBRA
+   ========================= */
+
+img.zebra {
+  align-content: center;
+}
+
+/* =========================
+   IMAGE LIZ TAYLOR
+   ========================= */
+
+.left-image {
+  float: left;
+  margin: 20px;
+}
+/* =========================
+  BIO
+   ========================= */
+
+.bio {
+  font-family: Helvetica, Arial, sans-serif;
+  max-width: 700px;
+  margin: 80px auto;
+  color: white;
+  line-height: 1.6;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.bio blockquote {
+  margin-top: 30px;
+  font-style: italic;
+  text-align: center;
+  opacity: 0.8;
+}
+
+
+
+.bio {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 30px;
+
+  color: white;
+  background: #0b0b0b; /* MATTE BLACK (better than rgba) */
+
+  line-height: 1.6;
+  font-size: 14px;
+  text-align: justify;
+
+  border-radius: 0;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   SPACESHIPS
+   ========================= */
+
+.spaceship {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+}
+
+
+/* tailles */
+.s1 img { width: 60px; height: auto; }
+.s2 img { width: 80px; height: auto; }
+.s3 img { width: 70px; height: auto; }
+
+.spaceship img {
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.7));
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes fromTop {
+  0%   { transform: translate(30vw, -20vh) rotate(0deg) scale(0.8); }
+  100% { transform: translate(30vw, 120vh) rotate(360deg) scale(1.2); }
+}
+
+@keyframes fromRight {
+  0%   { transform: translate(120vw, 30vh) rotate(0deg) scale(1); }
+  100% { transform: translate(-30vw, 60vh) rotate(-360deg) scale(0.9); }
+}
+
+@keyframes fromBottom {
+  0%   { transform: translate(60vw, 120vh) rotate(0deg) scale(0.8); }
+  100% { transform: translate(70vw, -20vh) rotate(360deg) scale(1.1); }
+}
+
+.s1 { animation: fromTop 16s linear infinite; }
+.s2 { animation: fromRight 20s linear infinite; }
+.s3 { animation: fromBottom 18s linear infinite; }
+
+/* =========================
+   texte version mobile
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .bio {
+    margin: 20px;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  img.curriculum {
+    width: 90%;
+  }
+
+  .left-image {
+    float: none;
+    display: block;
+    margin: 20px auto;
+  }
+
+}
+/* =========================
+   INTERGALACTIC HEADER
+   ========================= */
+
+.hero-header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.intergalactic-time {
+  display: inline-block;
+  padding: 20px 30px;
+  background: #0b0b0b;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.time-label {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+#clock {
+  font-size: 28px;
+  font-weight: bold;
+}
